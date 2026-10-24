@@ -1,0 +1,510 @@
+/* ==========================================================================
+   Student Management System - Global Stylesheet
+   Spring Boot 5-Page Web Application
+   ========================================================================== */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #dbeafe;
+    --secondary-color: #0f172a;
+    --accent-color: #059669;
+    --accent-light: #d1fae5;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    --transition: all 0.25s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.brand-icon {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.brand-text h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    line-height: 1.2;
+}
+
+.brand-text span {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    background-color: var(--primary-light);
+}
+
+nav a.active {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Main Content Layout
+   ========================================================================== */
+main {
+    flex: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.page-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    letter-spacing: -0.02em;
+}
+
+.page-header p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Cards & Layout Components
+   ========================================================================== */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 1.75rem auto;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: white;
+}
+
+/* Grid Layouts */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   Page Specific Components
+   ========================================================================== */
+
+/* Profile / Creator Page */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 2rem;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-md);
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.info-table tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-table th {
+    padding: 0.85rem 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    width: 35%;
+}
+
+.info-table td {
+    padding: 0.85rem 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Features Page */
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.feature-check {
+    background-color: var(--accent-light);
+    color: var(--accent-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.feature-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
+}
+
+.feature-content p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Contact Page */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-details h4 {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+}
+
+.contact-details p {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Target Users Badges */
+.badge-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+}
+
+.badge {
+    background-color: #f1f5f9;
+    color: #334155;
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-color);
+    padding: 1.5rem;
+    margin-top: auto;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .hero-section {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+
+    .info-table th {
+        width: 45%;
+    }
+}
